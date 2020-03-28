@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <script type='text/javascript'>
+            async function f1() {
+                let response=await fetch('http://localhost:5000/api/name');
+                    if(response.ok)
+                    {
+                        let div=document.createElement('div');
+                        let textd=await response.text();
+                        div.innerHTML=textd; 
+                        document.body.append(div);
+                    }
+                    else
+                    {
+                        alert('Error');
+                    }
+                }
+                f1();
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "currentState": "norm",
+  "available": [
+    "norm",
+    "test",
+    "idle",
+    "stop"
+  ]
+}

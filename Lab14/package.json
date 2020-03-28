@@ -1,0 +1,7 @@
+{
+  "name": "Lab14",
+  "version": "1.0.0",
+  "dependencies": {
+    "mssql": "latest"
+  }
+}

@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://localhost:5000/css/ie.css'>
+<script type="text/javascript" src="http://localhost:5000/jquery"></script>
+</head>
+<body>
+<h1>CSS</h1>
+<script type='text/javascript' src='http://localhost:5000/js/JS.js'></script>
+<img src='http://localhost:5000/png/pokemon.png'/><br/>
+<video src='http://localhost:5000/mp4/HOTA.mp4' width="400" height="300" controls="controls"></video><br/>
+<a href='http://localhost:5000/docx/VBS.docx'>docx</a><br/>
+<button onclick="Get()">JSON</button>
+<div id='get_result'></div>
+<script>
+     function Get(){
+        console.log('GET');
+        fetch('http://localhost:5000/json/recipe.json',{
+            method:'GET', mode: 'no-cors',
+            headers:{'Content-Type': 'application/json','Accept': 'application/json'}
+        }).then(response=>{return response.json();})
+    .then((pdata)=> {
+        console.log('pdata',pdata);
+        get_result.innerHTML="First name:"+pdata.first_name+"</br>";
+        get_result.innerHTML+="Second name:"+pdata.last_name+"</br>";
+        get_result.innerHTML+="Location:"+pdata.location+"</br>";
+    }); 
+}
+</script> 
+<button onclick="Get2()">XML</button>
+<script>
+    function Get2(){
+        console.log('GET');
+        fetch('http://localhost:5000/xml/recipe.xml',{
+            method:'GET', mode: 'no-cors',
+            headers:{'Content-Type': 'application/xml','Accept': 'application/xml'}
+        }).then(response=>{return response.text();})
+    .then((pdata)=> {
+        console.log('pdata',pdata);
+        xmlParser(pdata);
+    });        
+}
+        function xmlParser(xml) {
+        console.log(xml);
+	    $(xml).find("Book").each(function () {
+        $(".main").append('<div class="book"><div class="title">' + $(this).find("Title").text() + '</div><div class="description">'
+             + $(this).find("Description").text() + '</div><div class="date">Published ' + $(this).find("Date").text() + '</div></div>');
+	    });
+    }
+</script> 
+<div class="main"></div>
+</body>
+</html>

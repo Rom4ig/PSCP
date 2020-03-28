@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    </head>
+    <body>
+       <div class="results">Ждём ответа</div>
+          <script   type='text/javascript' >
+	 $.ajax({
+	  type: 'GET',
+	  url: 'http://localhost:3000/api/name',
+	  datatype:'html',
+	  success: function(data) {
+	    $('.results').html(data);
+	  }
+});
+            </script>
+    </body>
+</html>

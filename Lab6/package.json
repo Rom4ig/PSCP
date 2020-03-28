@@ -1,0 +1,11 @@
+{
+  "name": "19102019lab6",
+  "version": "1.0.0",
+  "description": "6 lab NODE JS",
+  "main": "m06-03.js",
+  "scripts": {
+    "test": "send"
+  },
+  "author": "Rom4ig",
+  "license": "ISC"
+}

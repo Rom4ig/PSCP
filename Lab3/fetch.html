@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <script type='text/javascript'>
+            async function f1() {
+                var date1=new Date(); 
+                for (let x = 1; x < 20; x++)
+                {
+                let response=await fetch('http://localhost:5000/fact?k='+x);
+                    if(response.ok)
+                    {
+                        let div=document.createElement('div');
+                        let textd=await response.json();
+                        div.innerHTML='Результат: '+(new Date()-date1) +' '+textd.k+'/'+textd.fact;
+                        document.body.append(div);
+                    }
+                    else
+                    {
+                        alert('Error');
+                    }
+                }
+				
+				alert('Общее время выполнения<' +(new Date()-date1));		
+            }
+                f1();
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

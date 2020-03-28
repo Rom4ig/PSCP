@@ -1,0 +1,27 @@
+{
+  "name": "m0603",
+  "version": "1.0.1",
+  "description": "send message to logen4@yandex.ru",
+  "main": "m0603.js",
+  "scripts": {
+    "test": "send('1')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wyverna/m0603.git"
+  },
+  "keywords": [
+    "send",
+    "email-message",
+    "to",
+    "logen4@yandex.ru",
+    "without",
+    "smtp"
+  ],
+  "author": "Week",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wyverna/m0603/issues"
+  },
+  "homepage": "https://github.com/Wyverna/m0603#readme"
+}
