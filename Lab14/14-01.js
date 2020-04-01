@@ -5,14 +5,15 @@ const sql = require('mssql');
 const dbConfig = require('./dbconfig.js');
 async function init() {
   try {
-    //await sql.connect(dbConfig)
-    //const result = await sql.query`select * from faculty`
-    console.log(`result`)
+    await sql.connect(dbConfig)
+    const result = await sql.query`select * from faculty`
+    console.log(`result 1`)
+    console.log(result);
   } catch (err) {
     console.error('init() error: ' + err.message);
   }
 }
-init();
+
 async function ExecuteSQL(sqlQ) {
   let connection;
   try {
@@ -91,7 +92,7 @@ async function http_handler(req, res) {
         })})
         }
     else if (url.parse(req.url).pathname === '/api/pulpits') {
-      //let result = await ExecuteSQL('SELECT PULPIT,PULPIT_NAME,FACULTY FROM PULPIT');
+        //let result = await ExecuteSQL('SELECT PULPIT,PULPIT_NAME,FACULTY FROM PULPIT');
       await sql.connect(dbConfig, async function (err) {
         if (err) console.log(err);
         let request = new sql.Request();
